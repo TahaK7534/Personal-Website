@@ -1,0 +1,83 @@
+body{
+    height: 100vh;
+    width: 100vw;
+    background-color: black;
+    margin: 0rem;
+    /* overflow-x: hidden; */
+}
+
+#AboutMe{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    background-color: red;
+}
+
+#ImageContainer{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    align-items: center;
+}
+
+.Image{
+    height: 60vh;
+    width: 25vw;
+    object-fit: cover;
+    object-position: center;
+    margin-right: 1vmin; 
+}
+/* I need to test it on firefox and then if it dose not work either find a work arround or hardcode differnt view for firefox*/
+.Image-Up{
+    animation: AnimateDown linear;
+    opacity: 0;
+    animation-timeline: view(); 
+    animation-range: entry 10% entry 125%;
+    animation-fill-mode: forwards; 
+}
+/* I need to test it on firefox and then if it dose not work either find a work arround or hardcode differnt view for firefox*/
+/*problem on firefox*/
+.Image-Down{
+    transform: translate(0,80vmin);
+    opacity: 0;
+    animation: AnimateUp linear;
+    animation-timeline: view(); 
+    animation-range: entry 10% entry 125%;
+    animation-fill-mode: forwards; 
+}
+
+@keyframes AnimateUp{
+    from {
+    transform: translate(0,80vmin);
+    opacity: 0;
+    }
+    to {
+    transform: translate(0,0vmin);
+    opacity: 1;
+    }
+}
+
+@keyframes AnimateDown{
+    from {
+    opacity: 0;
+    }
+    to {
+    opacity: 1;
+    }
+}
+
+/*
+Next time, when you click on any of the cards center the card that you clicked
+- make all other cards fly out to the left and right respectively animate that
+- center the clicked card animate that
+-  perform a zoom in style animation on the card
+- that should take you the project page
+- There needs to be a reverse type of animation for leaving the page
+Also leave room for customization of stuff, like the colors of the background when zomming in - this is mainly so that
+I can make it more class like so adding projects in the future is as simple as possible.
+*/
+
+
+
