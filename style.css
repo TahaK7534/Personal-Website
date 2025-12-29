@@ -58,6 +58,13 @@ body{
     opacity: 1;
 }
 
+.Image-Center{
+        position: absolute;
+
+    animation: ImageCenter 3s ease forwards;
+    opacity: 1;
+}
+
 @keyframes AnimateUp{
     from {
     transform: translate(0,80vmin);
@@ -80,10 +87,15 @@ body{
 
 
 @keyframes ImageFlyAwayLeft{
-    to{transform: translateX(-100vmin);}
+    to{transform: translate(-100vmin,0);}
 }
 
 @keyframes ImageFlyAwayRight{
-    to{transform: translateX(100vmin);}
+    to{transform: translate(100vmin,0);}
 }
 
+@keyframes ImageCenter{
+    to {
+
+    }
+}
